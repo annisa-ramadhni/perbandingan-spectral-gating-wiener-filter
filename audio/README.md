@@ -1,45 +1,64 @@
-# Data
+# Audio Outputs
 
-This folder contains documentation about the audio data used in the project **"Perbandingan Metode Spectral Gating dan Wiener Filter dalam Penghilangan Noise pada Sinyal Suara"**.
+This folder contains selected audio outputs generated during the denoising experiments.
 
-The project uses clean audio samples and noise data to evaluate and compare two denoising methods: **Spectral Gating** and **Wiener Filter**.
+The outputs represent different stages of the audio processing workflow, including noisy audio, Spectral Gating results, and Wiener Filter results.
 
-## Dataset Overview
+## Audio Files
 
-The audio data used in the experiment has the following characteristics:
-
-| Attribute | Description |
+| File | Description |
 |---|---|
-| Clean audio samples | 2 audio samples |
-| Noise | Wind noise |
-| Sampling rate | 44,100 Hz |
-| Audio duration | 46 seconds |
-| Noise mixing level | 0.3 |
+| `audio_noisy1.wav` | Noisy version of Audio 1 |
+| `audio_noisy2.wav` | Noisy version of Audio 2 |
+| `audio_sg1.wav` | Audio 1 after Spectral Gating |
+| `audio_sg2.wav` | Audio 2 after Spectral Gating |
+| `audio_wiener1.wav` | Audio 1 after Wiener Filter |
+| `audio_wiener2.wav` | Audio 2 after Wiener Filter |
 
-The audio samples are standardized to the same duration and sampling rate before the denoising process.
+## Audio Characteristics
 
-## Data Processing
+The audio data used in the experiment was standardized with:
 
-The audio data goes through the following processing pipeline:
+- Sampling rate: **44,100 Hz**
+- Duration: **46 seconds**
+- Noise mixing level: **0.3**
+- Noise type: **Wind noise**
 
-1. Prepare the clean audio samples.
-2. Add noise to the clean audio.
-3. Perform preprocessing and standardization.
-4. Apply Spectral Gating.
-5. Apply Wiener Filter.
-6. Test different parameters for both denoising methods.
-7. Select parameters based on the highest SNR obtained during the experiments.
-8. Evaluate the denoised audio using SNR and MSE.
-9. Compare the results of Spectral Gating and Wiener Filter.
+## Processing Stages
 
-## Data Availability
+The audio outputs represent the following processing stages:
 
-Not all original source audio files are included in this repository because of file size and portfolio repository considerations.
+### 1. Noisy Audio
 
-The complete data processing and experimental procedure can be found in:
+The clean audio samples are combined with the noise sample using a noise mixing level of 0.3.
+
+The resulting files are:
+
+- `audio_noisy1.wav`
+- `audio_noisy2.wav`
+
+### 2. Spectral Gating
+
+Spectral Gating is applied to reduce noise in the frequency domain.
+
+The resulting files are:
+
+- `audio_sg1.wav`
+- `audio_sg2.wav`
+
+### 3. Wiener Filter
+
+Wiener Filter is applied as the second denoising approach for comparison.
+
+The resulting files are:
+
+- `audio_wiener1.wav`
+- `audio_wiener2.wav`
+
+## Purpose
+
+These audio outputs allow the denoising results to be inspected directly in addition to the waveform, spectrogram, SNR, and MSE analysis.
+
+The complete processing procedure and parameter experiments are available in:
 
 [`KODE_PSD_KEL_10.ipynb`](../notebooks/KODE_PSD_KEL_10.ipynb)
-
-## Important Note
-
-The repository contains selected audio outputs and documentation rather than the complete original dataset. Therefore, the repository is intended primarily to demonstrate the **data processing workflow, denoising methods, parameter testing, and evaluation results**.
